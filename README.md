@@ -1,6 +1,8 @@
 # Site institucional do Aulexis
 
-Página única feita com Vite, GSAP (animações de rolagem) e Lenis (rolagem suave).
+Página única feita com Vite e JavaScript puro, sem outras dependências.
+
+A ideia central é "Cada aluno conta": cada ponto na tela é um aluno (fictício). Conforme a página rola, os mesmos pontos viram um cartão-resposta, são lidos pela câmera, formam a curva da TRI, se separam por nível, se espalham pelo mapa das escolas e terminam em um único aluno.
 
 ## Rodar
 
@@ -30,8 +32,8 @@ Em `src/config.js`:
 
 - `index.html`: o conteúdo de todas as seções.
 - `src/estilo.css`: o visual.
-- `src/main.js`: abertura, sistema orbital, ciclo, simulação de fluência, painéis e formulário.
-- `src/graficos.js`: os gráficos da seção de painéis. Os dados são fictícios.
+- `src/historia.js`: a história em pontos (canvas), com as sete formações e a dica ao passar o mouse.
+- `src/main.js`: topo, marca-texto, simulação de fluência, módulos, papéis e o contador da rede no contato.
 - `public/marca`: a logo.
 
-A abertura aparece uma vez por sessão do navegador. Para ver de novo, abra uma aba anônima.
+Todos os alunos, escolas e números da história são fictícios.

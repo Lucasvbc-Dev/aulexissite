@@ -6,481 +6,251 @@
     <title>Aulexis — Cada aluno conta</title>
     <meta
       name="description"
-      content="O Aulexis reúne avaliações, banco de questões, leitura de gabaritos pela câmera, fluência leitora, análise TRI e painéis de resultados em uma só plataforma para redes de ensino."
+      content="Plataforma de avaliação educacional: da prova impressa ao painel da rede, com leitura de gabaritos pela câmera, TRI, fluência leitora e resultados por aluno."
     />
-    <meta name="theme-color" content="#060b17" />
+    <meta name="theme-color" content="#f6f5f0" />
     <meta property="og:title" content="Aulexis — Cada aluno conta" />
-    <meta property="og:description" content="Da prova ao painel da rede, no mesmo dia. Avaliação educacional de ponta a ponta." />
+    <meta property="og:description" content="Da prova ao painel da rede, sem perder nenhum aluno de vista." />
     <meta property="og:image" content="/marca/aulexis-icone.png" />
     <link rel="icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" href="/marca/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <!-- Ícones (sprite) -->
-    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-      <symbol id="i-prova" viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7z" /><path d="M14 3v5h5" /><path d="m10 14 2 2 4-4" /></symbol>
-      <symbol id="i-banco" viewBox="0 0 24 24"><ellipse cx="12" cy="5.5" rx="7.5" ry="2.8" /><path d="M4.5 5.5v6c0 1.6 3.4 2.8 7.5 2.8s7.5-1.2 7.5-2.8v-6" /><path d="M4.5 11.5v6c0 1.6 3.4 2.8 7.5 2.8s7.5-1.2 7.5-2.8v-6" /></symbol>
-      <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8h3l1.6-2.5h6.8L17 8h3v11H4z" /><circle cx="12" cy="13.2" r="3.4" /></symbol>
-      <symbol id="i-teclado" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2" /><path d="M7 10h.01M11 10h.01M15 10h.01M7 14h10" /></symbol>
-      <symbol id="i-leitura" viewBox="0 0 24 24"><path d="M3 6.5C6 5 9 5 12 7c3-2 6-2 9-.5V19c-3-1.5-6-1.5-9 .5-3-2-6-2-9-.5z" /><path d="M12 7v12.5" /></symbol>
-      <symbol id="i-tri" viewBox="0 0 24 24"><path d="M3 20h18" /><path d="M4 18c4 0 5-12 8-12s4 12 8 12" /></symbol>
-      <symbol id="i-turmas" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3" /><path d="M3.5 19c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5" /><circle cx="17" cy="9" r="2.4" /><path d="M16 14.2c2.4-.2 4.2 1.4 4.6 4" /></symbol>
-      <symbol id="i-painel" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2.5" /><path d="M7 16v-3M11 16V9M15 16v-5M19 16" /></symbol>
-      <symbol id="i-escudo" viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.5 3 8.3 7 10 4-1.7 7-5.5 7-10V6z" /><path d="m9 12 2 2 4-4" /></symbol>
-      <symbol id="i-celular" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.5" /><path d="M11 18.5h2" /></symbol>
-      <symbol id="i-mapa" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z" /><circle cx="12" cy="10" r="2.4" /></symbol>
-      <symbol id="i-chave" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4" /><path d="m11 12 8-8M16 7l2 2M14 9l2 2" /></symbol>
-      <symbol id="i-seta" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></symbol>
-      <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" /></symbol>
-      <symbol id="i-escola" viewBox="0 0 24 24"><path d="M3 10 12 5l9 5-9 5z" /><path d="M7 12.3V17c1.5 1.3 3.2 2 5 2s3.5-.7 5-2v-4.7" /></symbol>
-      <symbol id="i-pessoa" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5" /><path d="M5 20c.8-4 3.6-6 7-6s6.2 2 7 6" /></symbol>
-    </svg>
-
-    <!-- Abertura: a logo entra com a órbita e a cortina se fecha sobre a logo do topo -->
-    <div class="abertura" aria-hidden="true">
-      <div class="abertura__conteudo">
-        <div class="abertura__marca">
-          <svg class="abertura__anel" viewBox="0 0 200 200">
-            <defs>
-              <linearGradient id="anel-abertura" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#34d399" />
-                <stop offset="1" stop-color="#0284c7" />
-              </linearGradient>
-            </defs>
-            <circle cx="100" cy="100" r="92" fill="none" stroke="url(#anel-abertura)" stroke-width="2" stroke-linecap="round" />
-          </svg>
-          <img class="abertura__logo" src="/marca/aulexis-icone.png" alt="" />
-        </div>
-        <div class="abertura__nome"><span>A</span><span>u</span><span>l</span><span>e</span><span>x</span><span>i</span><span>s</span></div>
-        <div class="abertura__frase">Cada aluno conta.</div>
-      </div>
-    </div>
-
-    <header class="nav">
-      <a href="#topo" class="nav__marca" aria-label="Aulexis — início">
-        <img src="/marca/aulexis-icone.png" alt="" class="nav__logo" />
+    <header class="topo">
+      <a href="#inicio" class="topo__marca" aria-label="Aulexis — início">
+        <img src="/marca/aulexis-icone.png" alt="" />
         <span>Aulexis</span>
       </a>
-      <nav class="nav__links" aria-label="Seções">
-        <a href="#como-funciona">Como funciona</a>
-        <a href="#modulos">Módulos</a>
+      <nav class="topo__links" aria-label="Seções">
+        <a href="#historia">A história</a>
         <a href="#fluencia">Fluência</a>
-        <a href="#paineis">Painéis</a>
-        <a href="#para-quem">Para quem</a>
+        <a href="#modulos">Módulos</a>
+        <a href="#papeis">Para quem</a>
+        <a href="#perguntas">Perguntas</a>
       </nav>
-      <div class="nav__acoes">
-        <a class="nav__entrar" data-plataforma>Entrar</a>
-        <a class="botao botao--marca botao--pequeno magnetico" href="#contato">Agendar demonstração</a>
+      <div class="topo__acoes">
+        <a class="topo__entrar" data-plataforma>Entrar</a>
+        <a class="botao botao--tinta" href="#contato">Agendar demonstração</a>
       </div>
-      <button class="nav__menu" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
+      <button class="topo__menu" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
     </header>
 
-    <div class="menu-movel" aria-hidden="true">
-      <a href="#como-funciona">Como funciona</a>
-      <a href="#modulos">Módulos</a>
+    <div class="gaveta" aria-hidden="true">
+      <a href="#historia">A história</a>
       <a href="#fluencia">Fluência</a>
-      <a href="#paineis">Painéis</a>
-      <a href="#para-quem">Para quem</a>
-      <a class="botao botao--marca" href="#contato">Agendar demonstração</a>
-      <a class="botao botao--contorno-claro" data-plataforma>Entrar na plataforma</a>
+      <a href="#modulos">Módulos</a>
+      <a href="#papeis">Para quem</a>
+      <a href="#perguntas">Perguntas</a>
+      <a class="botao botao--tinta" href="#contato">Agendar demonstração</a>
+      <a class="botao botao--linha" data-plataforma>Entrar na plataforma</a>
     </div>
 
-    <main id="topo">
-      <!-- ============ HERÓI ============ -->
-      <section class="heroi">
-        <div class="cena" aria-hidden="true">
-          <span class="aurora aurora--a"></span>
-          <span class="aurora aurora--b"></span>
-          <span class="aurora aurora--c"></span>
-          <span class="pontos"></span>
-          <span class="luz"></span>
-        </div>
-
-        <div class="heroi__texto">
-          <span class="selo-topo"><span class="ponto-vivo"></span> Avaliação educacional de ponta a ponta</span>
-          <h1 class="heroi__titulo">
-            <span class="linha"><span>Cada</span></span>
-            <span class="linha linha--palavra"><span><em class="palavra-giro" data-palavras="avaliação,questão,gabarito,resposta,leitura,habilidade,escola,aluno">avaliação</em></span></span>
-            <span class="linha"><span>conta.</span></span>
-          </h1>
-          <p class="heroi__sub">
-            O Aulexis junta a prova, a correção e o resultado em um só lugar. Da questão alinhada à BNCC ao painel
-            da rede inteira, <strong>no mesmo dia</strong> — para ninguém esperar o fim do ano para saber quem
-            precisa de ajuda.
-          </p>
-          <div class="heroi__acoes">
-            <a class="botao botao--marca magnetico" href="#contato">Agendar demonstração <svg class="seta"><use href="#i-seta" /></svg></a>
-            <a class="botao botao--vidro magnetico" href="#como-funciona">Ver como funciona</a>
+    <main id="inicio">
+      <!-- ============ A HISTÓRIA (pontos que mudam com a rolagem) ============ -->
+      <section class="historia" id="historia">
+        <div class="palco">
+          <canvas class="palco__tela" aria-hidden="true"></canvas>
+          <div class="dica" role="status"></div>
+          <div class="cartao-aluno" aria-hidden="true">
+            <span class="cartao-aluno__selo">Precisa de atenção</span>
+            <b data-aluno>Aluno 0214 · 3º ano B</b>
+            <small data-escola>EM Rio Claro</small>
+            <dl>
+              <div><dt>Proficiência</dt><dd><span data-pontos>168</span> pts</dd></div>
+              <div><dt>Nível</dt><dd class="cartao-aluno__nivel">Abaixo do básico</dd></div>
+            </dl>
+            <p><b>Mais errou:</b> EF03MA06 — problemas de adição e subtração.</p>
+            <p class="cartao-aluno__acao">Próximo passo: grupo de reforço na semana que vem.</p>
           </div>
-          <ul class="heroi__provas">
-            <li><strong>8</strong> módulos integrados</li>
-            <li><strong>10</strong> painéis de resultado</li>
-            <li><strong>TRI</strong> e matriz da BNCC</li>
-          </ul>
-        </div>
-
-        <!-- Sistema orbital: a logo no centro e os módulos girando em volta -->
-        <div class="orbital" aria-label="Módulos do Aulexis">
-          <svg class="orbital__aneis" viewBox="-300 -300 600 600" aria-hidden="true">
-            <defs>
-              <linearGradient id="anel-orbital" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0" stop-color="#10b981" stop-opacity="0" />
-                <stop offset=".4" stop-color="#10b981" stop-opacity=".6" />
-                <stop offset=".75" stop-color="#38bdf8" stop-opacity=".6" />
-                <stop offset="1" stop-color="#38bdf8" stop-opacity="0" />
-              </linearGradient>
-            </defs>
-            <ellipse class="orbital__anel" rx="165" ry="84" />
-            <ellipse class="orbital__anel orbital__anel--tracejado" rx="235" ry="124" />
-            <ellipse class="orbital__anel" rx="298" ry="164" />
-          </svg>
-          <div class="orbital__nucleo">
-            <span class="orbital__halo"></span>
-            <img src="/marca/aulexis-icone.png" alt="Aulexis" />
-          </div>
-          <div class="orbital__satelites"></div>
-          <div class="orbital__dica" aria-live="polite"><strong></strong><span></span></div>
-        </div>
-
-        <a href="#plataforma" class="rolar" aria-label="Rolar para baixo"><span></span></a>
-      </section>
-
-      <!-- ============ FAIXA ============ -->
-      <section class="faixa" aria-label="O que o Aulexis faz">
-        <div class="faixa__trilho faixa__trilho--ida">
-          <span>Avaliações</span><i></i><span>Banco de questões</span><i></i><span>Leitor de gabaritos</span><i></i><span>Fluência leitora</span><i></i><span>Análise TRI</span><i></i><span>Habilidades da BNCC</span><i></i><span>Painéis da rede</span><i></i>
-        </div>
-      </section>
-
-      <!-- ============ MANIFESTO ============ -->
-      <section class="manifesto" id="plataforma">
-        <span class="eyebrow">Por que o Aulexis existe</span>
-        <p class="manifesto__texto" data-revelar-palavras>
-          Toda avaliação vira uma pilha de papel. Gabaritos para corrigir, planilhas para somar, relatórios que
-          chegam quando o semestre já acabou. Enquanto isso, o aluno que precisava de ajuda em março continua
-          esperando.
-        </p>
-        <p class="manifesto__virada"><span>O Aulexis transforma resposta em</span> <em>decisão.</em></p>
-      </section>
-
-      <!-- ============ COMO FUNCIONA ============ -->
-      <section class="ciclo" id="como-funciona">
-        <div class="ciclo__cabeca">
-          <span class="eyebrow">Como funciona</span>
-          <h2 class="titulo-secao revelar">Um ciclo inteiro, <em>sem planilha no meio.</em></h2>
-        </div>
-
-        <div class="ciclo__corpo">
-          <ol class="passos">
-            <li class="passo ativo" data-passo="0">
-              <span class="passo__num">01</span>
-              <div>
-                <h3>Monte a prova</h3>
-                <p>Escolha questões do banco, já ligadas às habilidades da BNCC, e organize a avaliação por série e componente.</p>
-              </div>
-            </li>
-            <li class="passo" data-passo="1">
-              <span class="passo__num">02</span>
-              <div>
-                <h3>Aplique do seu jeito</h3>
-                <p>Prova impressa com gabarito de bolinhas para cada aluno, ou fluência leitora aplicada direto no celular.</p>
-              </div>
-            </li>
-            <li class="passo" data-passo="2">
-              <span class="passo__num">03</span>
-              <div>
-                <h3>Corrija pela câmera</h3>
-                <p>Aponte o celular para o gabarito e as marcações são lidas na hora. Prefere digitar? Também dá.</p>
-              </div>
-            </li>
-            <li class="passo" data-passo="3">
-              <span class="passo__num">04</span>
-              <div>
-                <h3>Entenda de verdade</h3>
-                <p>A Teoria de Resposta ao Item calcula a proficiência de cada aluno, considerando a dificuldade de cada questão.</p>
-              </div>
-            </li>
-            <li class="passo" data-passo="4">
-              <span class="passo__num">05</span>
-              <div>
-                <h3>Aja onde importa</h3>
-                <p>Painéis mostram onde estão as maiores necessidades, da rede à turma, para a intervenção chegar a tempo.</p>
-              </div>
-            </li>
+          <ol class="trilho" aria-hidden="true">
+            <li>Início</li><li>Prova</li><li>Correção</li><li>TRI</li><li>Níveis</li><li>Rede</li><li>Aluno</li>
           </ol>
+        </div>
 
-          <div class="ciclo__palco" aria-hidden="true">
-            <div class="janela">
-              <div class="janela__barra"><i></i><i></i><i></i><span class="janela__url">aulexis · <b>Banco de questões</b></span></div>
-              <div class="janela__corpo">
-                <!-- 01: banco de questões -->
-                <div class="quadro ativo" data-quadro="0">
-                  <div class="q-filtros"><span>Matemática</span><span>3º ano</span><span class="q-filtros__ativo">EF03MA06</span></div>
-                  <div class="q-lista">
-                    <div class="q-card"><b>Q14</b><p>Ana tinha 48 figurinhas e ganhou mais 25. Com quantas ficou?</p><span class="q-tag">EF03MA06</span><span class="q-dif"><i></i><i></i><i class="off"></i></span></div>
-                    <div class="q-card q-card--escolhida"><b>Q15</b><p>Qual número completa a sequência 120, 130, ___, 150?</p><span class="q-tag">EF03MA01</span><span class="q-dif"><i></i><i class="off"></i><i class="off"></i></span></div>
-                    <div class="q-card"><b>Q16</b><p>Uma régua tem 30 centímetros. Quantos faltam para 1 metro?</p><span class="q-tag">EF03MA17</span><span class="q-dif"><i></i><i></i><i></i></span></div>
-                  </div>
-                  <div class="q-prova"><span>Prova diagnóstica · 3º ano</span><b><span class="q-prova__num">12</span> questões</b></div>
-                </div>
-
-                <!-- 02: gabarito impresso -->
-                <div class="quadro" data-quadro="1">
-                  <div class="folha">
-                    <div class="folha__topo"><span class="folha__marca"></span><div><b>Cartão-resposta</b><small>Aluno 0214 · 3º ano B</small></div><span class="folha__qr"></span></div>
-                    <div class="folha__grade"></div>
-                    <span class="folha__canto folha__canto--a"></span><span class="folha__canto folha__canto--b"></span><span class="folha__canto folha__canto--c"></span><span class="folha__canto folha__canto--d"></span>
-                  </div>
-                </div>
-
-                <!-- 03: leitura pela câmera -->
-                <div class="quadro" data-quadro="2">
-                  <div class="leitor">
-                    <div class="leitor__celular">
-                      <div class="leitor__tela">
-                        <div class="leitor__folha"><div class="folha__grade folha__grade--mini"></div></div>
-                        <span class="leitor__mira"></span>
-                        <span class="leitor__laser"></span>
-                      </div>
-                    </div>
-                    <div class="leitor__lista">
-                      <div class="leitor__item"><span class="ok">✓</span> Aluno 0212 <b>9/12</b></div>
-                      <div class="leitor__item"><span class="ok">✓</span> Aluno 0213 <b>11/12</b></div>
-                      <div class="leitor__item leitor__item--agora"><span class="lendo"></span> Aluno 0214 <b>lendo…</b></div>
-                      <div class="leitor__total"><span class="leitor__contador">34</span> cartões lidos hoje</div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- 04: TRI -->
-                <div class="quadro" data-quadro="3">
-                  <div class="tri">
-                    <svg class="tri__grafico" viewBox="0 0 360 200">
-                      <defs>
-                        <linearGradient id="tri-area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#10b981" stop-opacity=".35" /><stop offset="1" stop-color="#10b981" stop-opacity="0" /></linearGradient>
-                      </defs>
-                      <path class="tri__eixo" d="M20 180H350M20 20V180" />
-                      <path class="tri__area" d="M20 178 C 90 178 120 170 150 140 S 200 30 250 24 S 330 20 350 20 V180 H20Z" fill="url(#tri-area)" />
-                      <path class="tri__curva" d="M20 178 C 90 178 120 170 150 140 S 200 30 250 24 S 330 20 350 20" />
-                      <path class="tri__curva tri__curva--b" d="M20 179 C 120 179 170 175 205 145 S 260 45 300 30 S 340 26 350 25" />
-                      <circle class="tri__ponto" cx="182" cy="92" r="6" />
-                    </svg>
-                    <div class="tri__legenda">
-                      <div><small>Proficiência estimada</small><b class="tri__valor">212,4</b></div>
-                      <div><small>Item mais difícil</small><b>Q16 · EF03MA17</b></div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- 05: painel de ação -->
-                <div class="quadro" data-quadro="4">
-                  <div class="acao">
-                    <div class="acao__barras">
-                      <div class="acao__linha"><span>Escola Municipal Aurora</span><i style="--v:.86"></i><b>86%</b></div>
-                      <div class="acao__linha"><span>Escola Municipal Horizonte</span><i style="--v:.74"></i><b>74%</b></div>
-                      <div class="acao__linha"><span>Escola Municipal Ipê</span><i style="--v:.61"></i><b>61%</b></div>
-                      <div class="acao__linha acao__linha--alerta"><span>Escola Municipal Rio Claro</span><i style="--v:.43"></i><b>43%</b></div>
-                    </div>
-                    <div class="acao__alerta">
-                      <span class="acao__sino">!</span>
-                      <div><b>3º ano B · Rio Claro</b><small>12 alunos abaixo do esperado em EF03MA06. Sugestão: reagrupamento e reforço na próxima semana.</small></div>
-                    </div>
-                  </div>
-                </div>
+        <div class="capitulos">
+          <header class="capitulo capitulo--abertura">
+            <div class="abertura">
+              <p class="abertura__selo"><span class="contador-alunos">864</span> pontos na tela. Cada um é um aluno.</p>
+              <h1 class="abertura__titulo">Cada aluno <mark>conta.</mark></h1>
+              <p class="abertura__sub">
+                O Aulexis acompanha todos eles — da prova impressa ao painel da secretaria — para que nenhum fique para
+                trás sem que alguém perceba.
+              </p>
+              <div class="abertura__acoes">
+                <a class="botao botao--tinta" href="#contato">Agendar demonstração</a>
+                <a class="botao botao--linha" href="#cap-1">Ver a história <span aria-hidden="true">↓</span></a>
               </div>
+              <p class="abertura__dica">Passe o mouse sobre os pontos.</p>
             </div>
-            <div class="ciclo__progresso"><span></span></div>
-          </div>
-        </div>
-      </section>
+          </header>
 
-      <!-- ============ MÓDULOS ============ -->
-      <section class="modulos" id="modulos">
-        <div class="modulos__cabeca">
-          <span class="eyebrow">A plataforma</span>
-          <h2 class="titulo-secao revelar">Oito módulos. <em>Uma só fonte de verdade.</em></h2>
-          <p>Cada parte conversa com a outra: a questão cadastrada vira prova, a prova vira resposta, a resposta vira painel.</p>
-        </div>
-
-        <div class="bento">
-          <article class="mod mod--grande" data-cor="verde">
-            <div class="mod__visual mod__visual--leitor" aria-hidden="true"><div class="mv-folha"><i></i><i class="m"></i><i></i><i></i><i></i><i class="m"></i><i class="m"></i><i></i><i></i><i></i><i class="m"></i><i></i></div><span class="mv-laser"></span></div>
-            <span class="mod__icone"><svg><use href="#i-camera" /></svg></span>
-            <h3>Leitor de gabaritos</h3>
-            <p>A câmera do celular lê o cartão-resposta e lança as respostas na hora. Sem scanner, sem fila de correção.</p>
+          <article class="capitulo" id="cap-1">
+            <div class="capitulo__texto">
+              <span class="capitulo__num">1 / 6</span>
+              <h2>Tudo começa com <mark>uma prova.</mark></h2>
+              <p>Questões do banco, cada uma ligada a uma habilidade da BNCC, viram uma avaliação com um cartão-resposta para cada aluno.</p>
+              <span class="capitulo__modulos">Banco de questões · Avaliações</span>
+            </div>
           </article>
 
-          <article class="mod" data-cor="ciano">
-            <div class="mod__visual mod__visual--onda" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-            <span class="mod__icone"><svg><use href="#i-leitura" /></svg></span>
-            <h3>Fluência leitora</h3>
-            <p>O aluno lê em voz alta, o áudio é analisado e a fluência sai em palavras por minuto, precisão e nível de leitura.</p>
+          <article class="capitulo">
+            <div class="capitulo__texto">
+              <span class="capitulo__num">2 / 6</span>
+              <h2>A câmera <mark>corrige.</mark></h2>
+              <p>O celular lê as marcações do cartão na hora: verde onde acertou, vermelho onde errou. Sem scanner, sem fila — e quem preferir pode digitar.</p>
+              <span class="capitulo__modulos">Leitor de gabaritos · Digitação</span>
+            </div>
           </article>
 
-          <article class="mod" data-cor="azul">
-            <div class="mod__visual mod__visual--prova" aria-hidden="true"><i></i><i></i><i></i><b>✓</b></div>
-            <span class="mod__icone"><svg><use href="#i-prova" /></svg></span>
-            <h3>Avaliações</h3>
-            <p>Diagnósticas, bimestrais ou da rede: crie, aplique e acompanhe.</p>
+          <article class="capitulo">
+            <div class="capitulo__texto">
+              <span class="capitulo__num">3 / 6</span>
+              <h2>Cada resposta vira <mark>proficiência.</mark></h2>
+              <p>A Teoria de Resposta ao Item pesa a dificuldade de cada questão. Os alunos se organizam numa curva — do que mais precisa ao que mais avançou.</p>
+              <span class="capitulo__modulos">Análise TRI</span>
+            </div>
           </article>
 
-          <article class="mod" data-cor="teal">
-            <div class="mod__visual mod__visual--banco" aria-hidden="true"><i></i><i></i><i></i><b>+</b></div>
-            <span class="mod__icone"><svg><use href="#i-banco" /></svg></span>
-            <h3>Banco de questões</h3>
-            <p>Questões organizadas por habilidade, série, componente e dificuldade.</p>
+          <article class="capitulo">
+            <div class="capitulo__texto">
+              <span class="capitulo__num">4 / 6</span>
+              <h2>E fica claro <mark>quem precisa.</mark></h2>
+              <p>Quatro níveis de desempenho, contados aluno por aluno. Em março, quando ainda dá tempo — não em dezembro.</p>
+              <span class="capitulo__modulos">Painel geral · Resultados</span>
+            </div>
           </article>
 
-          <article class="mod" data-cor="roxo">
-            <div class="mod__visual mod__visual--tri" aria-hidden="true"><svg viewBox="0 0 100 50"><path d="M2 48C30 48 38 4 60 4s30 0 38 0" /></svg></div>
-            <span class="mod__icone"><svg><use href="#i-tri" /></svg></span>
-            <h3>Análise TRI</h3>
-            <p>Proficiência que considera a dificuldade de cada questão.</p>
+          <article class="capitulo">
+            <div class="capitulo__texto">
+              <span class="capitulo__num">5 / 6</span>
+              <h2>Em toda a <mark>rede.</mark></h2>
+              <p>Cada escola no seu lugar do mapa. A secretaria vê onde a dificuldade se concentra e para onde levar formação e apoio.</p>
+              <span class="capitulo__modulos">Mapa de escolas · Comparativo · Equidade</span>
+            </div>
           </article>
 
-          <article class="mod" data-cor="laranja">
-            <div class="mod__visual mod__visual--digitar" aria-hidden="true"><span>A C B D</span><b></b></div>
-            <span class="mod__icone"><svg><use href="#i-teclado" /></svg></span>
-            <h3>Digitação de respostas</h3>
-            <p>Lançamento rápido, com teclado, para quando a câmera não é opção.</p>
-          </article>
-
-          <article class="mod" data-cor="rosa">
-            <div class="mod__visual mod__visual--turmas" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-            <span class="mod__icone"><svg><use href="#i-turmas" /></svg></span>
-            <h3>Turmas e alunos</h3>
-            <p>Escolas, turmas e anos letivos da rede, com importação por planilha.</p>
-          </article>
-
-          <article class="mod mod--largo" data-cor="verde">
-            <div class="mod__visual mod__visual--painel" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-            <span class="mod__icone"><svg><use href="#i-painel" /></svg></span>
-            <h3>Painéis da rede</h3>
-            <p>Dez painéis para olhar a rede por todos os ângulos: escola, turma, aluno, tempo e contexto.</p>
+          <article class="capitulo">
+            <div class="capitulo__texto">
+              <span class="capitulo__num">6 / 6</span>
+              <h2>Até chegar em <mark>um aluno.</mark></h2>
+              <p>No meio de centenas, o Aulexis aponta quem é, o que errou e o que fazer. A professora já sabe o que retomar amanhã.</p>
+              <span class="capitulo__modulos">Resultados por aluno · Evolução</span>
+            </div>
           </article>
         </div>
       </section>
 
       <!-- ============ FLUÊNCIA ============ -->
       <section class="fluencia" id="fluencia">
-        <div class="fluencia__texto">
-          <span class="eyebrow eyebrow--claro">Fluência leitora</span>
-          <h2 class="titulo-secao titulo-secao--claro revelar">Ouça a leitura. <em>Não só a nota.</em></h2>
-          <p>
-            Com o celular, o aplicador grava o aluno lendo. O Aulexis acompanha palavra por palavra, marca onde houve
-            tropeço e entrega a fluência em segundos — pronta para comparar com a turma, a escola e a rede.
-          </p>
-          <ul class="fluencia__fatos">
-            <li><strong>Palavras por minuto</strong> calculadas a partir do áudio</li>
-            <li><strong>Precisão</strong> com as palavras lidas com erro destacadas</li>
-            <li><strong>Nível de leitura</strong> do aluno, do pré-leitor ao fluente</li>
-          </ul>
+        <div class="fluencia__cabeca">
+          <span class="rotulo">Fluência leitora</span>
+          <h2>E a leitura? <mark>A gente escuta.</mark></h2>
+          <p>O aplicador grava o aluno lendo pelo celular. O Aulexis acompanha palavra por palavra e devolve a fluência em segundos.</p>
         </div>
 
         <div class="leitura">
-          <div class="leitura__topo">
-            <span class="leitura__aluno"><span class="leitura__avatar">JS</span><span><b>João, 2º ano A</b><small>Texto: O jardim da escola</small></span></span>
-            <button class="leitura__botao" type="button"><svg><use href="#i-play" /></svg><span>Simular leitura</span></button>
-          </div>
           <p class="leitura__texto" data-texto="No jardim da escola tem uma árvore grande. Todo dia, os passarinhos fazem festa nos galhos. A Lia gosta de sentar na sombra para ler um livro novo."></p>
           <div class="leitura__onda" aria-hidden="true"></div>
-          <div class="leitura__numeros">
-            <div><small>Palavras por minuto</small><b class="leitura__ppm">0</b></div>
-            <div><small>Precisão</small><b class="leitura__precisao">—</b></div>
-            <div><small>Nível</small><b class="leitura__nivel">—</b></div>
+          <div class="leitura__base">
+            <button class="leitura__botao" type="button"><span class="leitura__play" aria-hidden="true"></span><span>Ouvir a leitura</span></button>
+            <dl class="leitura__numeros">
+              <div><dt>Palavras por minuto</dt><dd class="leitura__ppm">—</dd></div>
+              <div><dt>Precisão</dt><dd class="leitura__precisao">—</dd></div>
+              <div><dt>Nível</dt><dd class="leitura__nivel">—</dd></div>
+            </dl>
           </div>
-          <span class="leitura__aviso">Simulação ilustrativa</span>
+          <small class="leitura__aviso">João, 2º ano A · simulação ilustrativa</small>
         </div>
       </section>
 
-      <!-- ============ PAINÉIS ============ -->
-      <section class="paineis" id="paineis">
-        <div class="paineis__cabeca">
-          <span class="eyebrow">Painéis de resultado</span>
-          <h2 class="titulo-secao revelar">A rede inteira, <em>em perspectiva.</em></h2>
-          <p>Do consolidado da secretaria ao histórico de um único aluno. Escolha um painel:</p>
+      <!-- ============ MÓDULOS (índice) ============ -->
+      <section class="modulos" id="modulos">
+        <div class="modulos__cabeca">
+          <span class="rotulo">O que tem dentro</span>
+          <h2>Oito módulos que <mark>conversam.</mark></h2>
         </div>
 
-        <div class="paineis__corpo">
-          <ul class="paineis__lista" role="tablist" aria-label="Painéis">
-            <li><button role="tab" aria-selected="true" data-grafico="geral"><b>Painel geral</b><small>Visão consolidada dos resultados</small></button></li>
-            <li><button role="tab" data-grafico="comparativo"><b>Comparativo</b><small>Escolas, turmas e séries lado a lado</small></button></li>
-            <li><button role="tab" data-grafico="historica"><b>Série histórica</b><small>A evolução ao longo das edições</small></button></li>
-            <li><button role="tab" data-grafico="correlacao"><b>Correlação</b><small>Relações entre indicadores</small></button></li>
-            <li><button role="tab" data-grafico="equidade"><b>Equidade</b><small>Quem está ficando para trás</small></button></li>
-            <li><button role="tab" data-grafico="mapa"><b>Mapa de escolas</b><small>A distribuição no território</small></button></li>
-          </ul>
+        <div class="indice">
+          <ol class="indice__lista">
+            <li><button data-modulo="0" aria-pressed="true"><span>01</span><b>Avaliações</b><small>Crie, aplique e acompanhe provas da rede.</small></button></li>
+            <li><button data-modulo="1"><span>02</span><b>Banco de questões</b><small>Questões por habilidade, série e dificuldade.</small></button></li>
+            <li><button data-modulo="2"><span>03</span><b>Leitor de gabaritos</b><small>O celular lê o cartão-resposta pela câmera.</small></button></li>
+            <li><button data-modulo="3"><span>04</span><b>Digitação de respostas</b><small>Lançamento rápido pelo teclado.</small></button></li>
+            <li><button data-modulo="4"><span>05</span><b>Fluência leitora</b><small>Palavras por minuto, precisão e nível.</small></button></li>
+            <li><button data-modulo="5"><span>06</span><b>Análise TRI</b><small>Proficiência que considera a dificuldade.</small></button></li>
+            <li><button data-modulo="6"><span>07</span><b>Turmas e alunos</b><small>Escolas e turmas, com importação por planilha.</small></button></li>
+            <li><button data-modulo="7"><span>08</span><b>Painéis da rede</b><small>Dez painéis, da rede ao aluno.</small></button></li>
+          </ol>
 
-          <div class="grafico" aria-hidden="true">
-            <div class="grafico__topo">
-              <div><small class="grafico__rotulo">Painel geral</small><b class="grafico__titulo">Proficiência média da rede</b></div>
-              <span class="grafico__selo">Avaliação diagnóstica · 2026</span>
+          <div class="vitrine" aria-hidden="true">
+            <div class="vitrine__tela ativa" data-tela="0">
+              <div class="v-prova">
+                <div class="v-prova__folha"><i></i><i></i><i></i><i></i><i></i></div>
+                <div class="v-prova__lista"><span>Diagnóstica · 3º ano</span><span>Bimestral · 5º ano</span><span>Fluência · 2º ano</span></div>
+              </div>
             </div>
-            <svg class="grafico__svg" viewBox="0 0 520 300" preserveAspectRatio="none"></svg>
-            <p class="grafico__nota">Dados fictícios para demonstração.</p>
+            <div class="vitrine__tela" data-tela="1">
+              <div class="v-banco">
+                <div class="v-banco__q"><b>Q14</b>Ana tinha 48 figurinhas e ganhou 25…<span>EF03MA06</span></div>
+                <div class="v-banco__q"><b>Q15</b>Qual número completa 120, 130, ___?<span>EF03MA01</span></div>
+                <div class="v-banco__q"><b>Q16</b>Uma régua tem 30 cm. Quanto falta…<span>EF03MA17</span></div>
+              </div>
+            </div>
+            <div class="vitrine__tela" data-tela="2">
+              <div class="v-leitor"><div class="v-leitor__cel"><div class="v-leitor__folha"></div><span class="v-leitor__laser"></span></div><b class="v-leitor__total">+1 cartão lido</b></div>
+            </div>
+            <div class="vitrine__tela" data-tela="3">
+              <div class="v-digitar"><span>Aluno 0214</span><div class="v-digitar__campos"><i>A</i><i>C</i><i>B</i><i>D</i><i>A</i><i>B</i></div></div>
+            </div>
+            <div class="vitrine__tela" data-tela="4">
+              <div class="v-onda"></div>
+            </div>
+            <div class="vitrine__tela" data-tela="5">
+              <svg class="v-tri" viewBox="0 0 200 110"><path d="M10 100 H190 M10 100 V10" class="v-tri__eixo" /><path d="M10 98 C 70 98 80 30 110 20 S 170 12 190 12" class="v-tri__curva" /></svg>
+            </div>
+            <div class="vitrine__tela" data-tela="6">
+              <div class="v-turmas"><span>1º A</span><span>1º B</span><span>2º A</span><span>3º B</span><span>4º A</span><span>5º C</span></div>
+            </div>
+            <div class="vitrine__tela" data-tela="7">
+              <div class="v-paineis"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
           </div>
         </div>
-
-        <ul class="paineis__mais">
-          <li>Resultados por aluno</li><li>Evolução por aluno</li><li>Variação comparativa</li><li>Indicadores contextuais</li>
-        </ul>
       </section>
 
-      <!-- ============ PARA QUEM ============ -->
-      <section class="quem" id="para-quem">
-        <div class="quem__cabeca">
-          <span class="eyebrow">Para quem</span>
-          <h2 class="titulo-secao revelar">Cada um vê <em>o que precisa ver.</em></h2>
-          <p>Perfis de acesso por grupo de usuário: cada pessoa entra e encontra a sua parte da rede.</p>
+      <!-- ============ PAPÉIS ============ -->
+      <section class="papeis" id="papeis">
+        <div class="papeis__cabeca">
+          <span class="rotulo">Para quem</span>
+          <h2>A mesma rede, <mark>quatro olhares.</mark></h2>
         </div>
 
-        <div class="quem__grade">
-          <article class="perfil inclinar">
-            <span class="perfil__icone"><svg><use href="#i-mapa" /></svg></span>
-            <h3>Secretaria de educação</h3>
-            <p>A rede inteira num só painel: compare escolas, acompanhe metas e direcione formação e recursos com evidência.</p>
-          </article>
-          <article class="perfil inclinar">
-            <span class="perfil__icone"><svg><use href="#i-escola" /></svg></span>
-            <h3>Gestão da escola</h3>
-            <p>Diretores e coordenadores enxergam turma por turma e planejam o reforço antes do bimestre acabar.</p>
-          </article>
-          <article class="perfil inclinar">
-            <span class="perfil__icone"><svg><use href="#i-pessoa" /></svg></span>
-            <h3>Professores</h3>
-            <p>Resultado por aluno e por habilidade, para saber exatamente o que retomar em sala.</p>
-          </article>
-          <article class="perfil inclinar">
-            <span class="perfil__icone"><svg><use href="#i-celular" /></svg></span>
-            <h3>Aplicadores em campo</h3>
-            <p>No celular, só o que importa na escola: ler gabaritos e aplicar a fluência leitora.</p>
-          </article>
+        <div class="papeis__seletor" role="tablist" aria-label="Escolha um papel">
+          <button role="tab" aria-selected="true" data-papel="0">Secretaria</button>
+          <button role="tab" aria-selected="false" data-papel="1">Escola</button>
+          <button role="tab" aria-selected="false" data-papel="2">Professor</button>
+          <button role="tab" aria-selected="false" data-papel="3">Aplicador</button>
         </div>
 
-        <div class="confianca">
-          <div class="confianca__item"><svg><use href="#i-escudo" /></svg><span><b>Dados protegidos</b>Acesso só com login e permissão.</span></div>
-          <div class="confianca__item"><svg><use href="#i-chave" /></svg><span><b>Permissões por perfil</b>Grupos e acessos sob controle.</span></div>
-          <div class="confianca__item"><svg><use href="#i-celular" /></svg><span><b>Feito para o celular</b>Os módulos de campo funcionam no aparelho.</span></div>
-          <div class="confianca__item"><svg><use href="#i-mapa" /></svg><span><b>A rede organizada</b>Regionais, escolas e unidades de trabalho.</span></div>
+        <div class="papel" aria-live="polite">
+          <p class="papel__frase"></p>
+          <ul class="papel__lista"></ul>
         </div>
       </section>
 
       <!-- ============ PERGUNTAS ============ -->
-      <section class="faq" id="perguntas">
-        <div class="faq__cabeca">
-          <span class="eyebrow">Perguntas frequentes</span>
-          <h2 class="titulo-secao revelar">Ficou alguma <em>dúvida?</em></h2>
+      <section class="perguntas" id="perguntas">
+        <div class="perguntas__cabeca">
+          <span class="rotulo">Perguntas</span>
+          <h2>Antes que você <mark>pergunte.</mark></h2>
         </div>
-        <div class="faq__lista">
+        <div class="perguntas__lista">
           <details>
             <summary>Preciso de scanner para corrigir as provas?</summary>
-            <p>Não. O leitor de gabaritos usa a câmera do celular. Se preferir, as respostas também podem ser digitadas pelo módulo de digitação.</p>
+            <p>Não. O leitor de gabaritos usa a câmera do celular. Se preferir, as respostas também podem ser digitadas.</p>
           </details>
           <details>
             <summary>As questões seguem a BNCC?</summary>
@@ -488,11 +258,11 @@
           </details>
           <details>
             <summary>O que é a TRI e por que ela importa?</summary>
-            <p>A Teoria de Resposta ao Item estima a proficiência considerando a dificuldade de cada questão — é a mesma abordagem usada no Saeb. Assim, dois alunos com o mesmo número de acertos podem ter proficiências diferentes, e os resultados ficam comparáveis entre edições.</p>
+            <p>A Teoria de Resposta ao Item estima a proficiência considerando a dificuldade de cada questão — é a abordagem usada no Saeb. Dois alunos com o mesmo número de acertos podem ter proficiências diferentes, e os resultados ficam comparáveis entre edições.</p>
           </details>
           <details>
-            <summary>Como funciona a avaliação de fluência leitora?</summary>
-            <p>O aplicador grava a leitura do aluno pelo celular. O áudio é analisado e o Aulexis entrega palavras por minuto, precisão e o nível de leitura, que já aparecem nos painéis.</p>
+            <summary>Como funciona a fluência leitora?</summary>
+            <p>O aplicador grava a leitura do aluno pelo celular. O áudio é analisado e o Aulexis entrega palavras por minuto, precisão e nível de leitura, que já aparecem nos painéis.</p>
           </details>
           <details>
             <summary>Quem pode ver os resultados?</summary>
@@ -505,59 +275,48 @@
         </div>
       </section>
 
-      <!-- ============ CHAMADA FINAL ============ -->
-      <section class="final" id="contato">
-        <div class="final__orbitas" aria-hidden="true">
-          <span></span><span></span><span></span>
+      <!-- ============ CONTATO ============ -->
+      <section class="contato" id="contato">
+        <div class="contato__pergunta">
+          <span class="rotulo rotulo--claro">Sua rede</span>
+          <h2>Quantos alunos tem a sua rede?</h2>
+          <label class="contato__numero">
+            <input type="text" value="8.500" inputmode="numeric" maxlength="7" aria-label="Número de alunos da rede" />
+            <span>alunos</span>
+          </label>
+          <input class="contato__faixa" type="range" min="50" max="60000" step="50" value="8500" aria-label="Ajustar número de alunos" />
+          <p class="contato__frase"><strong class="contato__total">8.500</strong> alunos. Cada um com uma história. Vamos enxergar todos?</p>
         </div>
-        <div class="final__conteudo">
-          <img class="final__logo" src="/marca/aulexis-icone.png" alt="" />
-          <h2 class="final__titulo">Cada aluno conta.<br /><em>Vamos começar pela sua rede?</em></h2>
-          <p>Conte um pouco sobre a sua rede e a gente mostra o Aulexis funcionando com a realidade de vocês.</p>
 
-          <form class="contato" novalidate>
-            <label><span>Seu nome</span><input name="nome" autocomplete="name" required /></label>
-            <label><span>Município ou rede</span><input name="rede" required /></label>
-            <label><span>Cargo</span><input name="cargo" /></label>
-            <label><span>E-mail</span><input name="email" type="email" autocomplete="email" required /></label>
-            <button class="botao botao--marca magnetico" type="submit">Quero uma demonstração <svg class="seta"><use href="#i-seta" /></svg></button>
-            <p class="contato__nota">Ao enviar, abrimos o seu aplicativo de e-mail com a mensagem pronta.</p>
-          </form>
+        <div class="contato__rede">
+          <canvas class="contato__pontos" aria-hidden="true"></canvas>
+          <small class="contato__escala"></small>
         </div>
+
+        <form class="formulario" novalidate>
+          <label><span>Seu nome</span><input name="nome" autocomplete="name" required /></label>
+          <label><span>Município ou rede</span><input name="rede" required /></label>
+          <label><span>Cargo</span><input name="cargo" /></label>
+          <label><span>E-mail</span><input name="email" type="email" autocomplete="email" required /></label>
+          <button class="botao botao--marca" type="submit">Quero uma demonstração</button>
+          <p class="formulario__nota">Ao enviar, abrimos o seu aplicativo de e-mail com a mensagem pronta.</p>
+        </form>
       </section>
     </main>
 
     <footer class="rodape">
-      <div class="rodape__topo">
-        <div class="rodape__marca">
-          <span class="rodape__logo"><img src="/marca/aulexis-icone.png" alt="" /> Aulexis</span>
-          <p>Plataforma de avaliação educacional.<br />Cada aluno conta.</p>
-        </div>
-        <div class="rodape__cols">
-          <div>
-            <h4>Plataforma</h4>
-            <a href="#como-funciona">Como funciona</a>
-            <a href="#modulos">Módulos</a>
-            <a href="#paineis">Painéis</a>
-          </div>
-          <div>
-            <h4>Aulexis</h4>
-            <a href="#para-quem">Para quem</a>
-            <a href="#perguntas">Perguntas</a>
-            <a data-plataforma>Entrar na plataforma</a>
-          </div>
-          <div>
-            <h4>Contato</h4>
-            <a data-email></a>
-            <a href="#contato">Agendar demonstração</a>
-          </div>
-        </div>
+      <div class="rodape__marca">
+        <img src="/marca/aulexis-icone.png" alt="" />
+        <div><b>Aulexis</b><span>Plataforma de avaliação educacional.</span></div>
       </div>
-      <div class="rodape__base">
-        <span>© <span id="ano">2026</span> Aulexis. Todos os direitos reservados.</span>
-        <span>Feito para quem ensina.</span>
-      </div>
-      <div class="rodape__gigante" aria-hidden="true">Aulexis</div>
+      <nav class="rodape__links" aria-label="Rodapé">
+        <a href="#historia">A história</a>
+        <a href="#modulos">Módulos</a>
+        <a href="#perguntas">Perguntas</a>
+        <a data-plataforma>Entrar</a>
+        <a data-email></a>
+      </nav>
+      <span class="rodape__direitos">© <span id="ano">2026</span> Aulexis</span>
     </footer>
 
     <script type="module" src="/src/main.js"></script>
